@@ -87,7 +87,7 @@ export default function DropZone({ onFile, compact = false }) {
   }
 
   return (
-    <div className="relative z-10 flex w-full max-w-xl flex-col items-center">
+    <div className="relative z-10 flex w-full max-w-sm flex-col items-center">
       {inputs}
       <div
         role="button"
@@ -101,22 +101,22 @@ export default function DropZone({ onFile, compact = false }) {
         }}
         onDragLeave={() => setDragging(false)}
         onDrop={handleDrop}
-        className={`relative z-10 flex w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed px-8 py-16 text-center backdrop-blur-sm transition-colors sm:py-20 ${
+        className={`relative z-10 flex w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed px-6 py-9 text-center transition-colors sm:py-10 ${
           dragging
-            ? "border-[#8b5cf6] bg-[#8b5cf6]/10"
-            : "border-white/25 bg-black/35 hover:border-white/45"
+            ? "border-[#8b5cf6] bg-[#8b5cf6]/15"
+            : "border-white/30 bg-black/10 hover:border-white/50 hover:bg-black/20"
         }`}
       >
         <svg
-          width="44"
-          height="44"
+          width="36"
+          height="36"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-white/50"
+          className="text-white/70 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]"
           aria-hidden="true"
         >
           <path d="M12 3v12" />
@@ -124,10 +124,10 @@ export default function DropZone({ onFile, compact = false }) {
           <path d="M5 21h14a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2" />
         </svg>
         <div>
-          <p className="font-display text-lg font-semibold text-white/90">
+          <p className="font-display text-lg font-semibold text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
             Drop an image here
           </p>
-          <p className="mt-1 text-sm text-white/50">
+          <p className="mt-1 text-sm text-white/70 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
             or click to browse &middot; JPG, PNG, WebP &middot; up to 20 MB
           </p>
         </div>

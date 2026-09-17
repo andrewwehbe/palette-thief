@@ -6,6 +6,7 @@ import PaletteStrip from "./components/PaletteStrip.jsx";
 import ContrastMatrix from "./components/ContrastMatrix.jsx";
 import ExportBar from "./components/ExportBar.jsx";
 import Toast from "./components/Toast.jsx";
+import HeroVideo from "./components/HeroVideo.jsx";
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_BYTES = 20 * 1024 * 1024;
@@ -181,11 +182,12 @@ export default function App() {
     <div className="flex min-h-dvh flex-col overflow-x-hidden">
       {!sessionActive ? (
         <main className="relative flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16">
+          <HeroVideo src="/hero/palette-hero.mp4" poster="/hero/palette-hero.jpg" />
           <div className="relative z-10 text-center">
-            <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="font-display text-4xl font-bold tracking-tight drop-shadow-[0_2px_24px_rgba(0,0,0,0.9)] sm:text-5xl">
               Palette Thief
             </h1>
-            <p className="mt-3 text-base text-white/55">Steal colors from anything.</p>
+            <p className="mt-3 text-base text-white/70 drop-shadow-[0_1px_12px_rgba(0,0,0,0.9)]">Steal colors from anything.</p>
           </div>
           <DropZone onFile={handleFile} />
         </main>

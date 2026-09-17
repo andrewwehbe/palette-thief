@@ -87,8 +87,7 @@ export default function DropZone({ onFile, compact = false }) {
   }
 
   return (
-    <div className="relative flex w-full max-w-xl flex-col items-center">
-      <div className="gradient-blob" aria-hidden="true" />
+    <div className="relative z-10 flex w-full max-w-xl flex-col items-center">
       {inputs}
       <div
         role="button"
@@ -105,7 +104,7 @@ export default function DropZone({ onFile, compact = false }) {
         className={`relative z-10 flex w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed px-8 py-16 text-center backdrop-blur-sm transition-colors sm:py-20 ${
           dragging
             ? "border-[#8b5cf6] bg-[#8b5cf6]/10"
-            : "border-white/20 bg-white/[0.03] hover:border-white/35"
+            : "border-white/25 bg-black/35 hover:border-white/45"
         }`}
       >
         <svg

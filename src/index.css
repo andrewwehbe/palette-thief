@@ -30,25 +30,6 @@ body {
   background-color: rgb(139 92 246 / 0.4);
 }
 
-/* ---------- Gradient blob (empty state backdrop) ---------- */
-
-.gradient-blob {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(34rem, 80vw);
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  background:
-    radial-gradient(circle at 30% 30%, rgb(139 92 246 / 0.55), transparent 60%),
-    radial-gradient(circle at 70% 40%, rgb(99 102 241 / 0.45), transparent 60%),
-    radial-gradient(circle at 45% 75%, rgb(59 130 246 / 0.35), transparent 60%);
-  filter: blur(64px);
-  border-radius: 58% 42% 55% 45% / 45% 58% 42% 55%;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
 /* ---------- Shimmer skeleton (static base; sweep is motion-gated) ---------- */
 
 .shimmer {
@@ -79,29 +60,6 @@ body {
 /* ---------- Motion (all non-essential animation lives here) ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
-  .gradient-blob {
-    animation: blob-drift 16s ease-in-out infinite alternate;
-  }
-
-  @keyframes blob-drift {
-    0% {
-      transform: translate(-50%, -50%) scale(1) rotate(0deg);
-      border-radius: 58% 42% 55% 45% / 45% 58% 42% 55%;
-    }
-    33% {
-      transform: translate(-56%, -46%) scale(1.08) rotate(12deg);
-      border-radius: 45% 55% 48% 52% / 55% 42% 58% 45%;
-    }
-    66% {
-      transform: translate(-44%, -55%) scale(0.94) rotate(-10deg);
-      border-radius: 52% 48% 42% 58% / 48% 55% 45% 52%;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1.04) rotate(6deg);
-      border-radius: 58% 42% 55% 45% / 45% 58% 42% 55%;
-    }
-  }
-
   .shimmer::after {
     animation: shimmer-sweep 1.4s ease-in-out infinite;
   }

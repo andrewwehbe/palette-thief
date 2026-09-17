@@ -87,7 +87,7 @@ export default function DropZone({ onFile, compact = false }) {
   }
 
   return (
-    <div className="relative z-10 flex w-full max-w-sm flex-col items-center">
+    <div className="relative z-10 flex w-full max-w-[16rem] flex-col items-center">
       {inputs}
       <div
         role="button"
@@ -101,15 +101,15 @@ export default function DropZone({ onFile, compact = false }) {
         }}
         onDragLeave={() => setDragging(false)}
         onDrop={handleDrop}
-        className={`relative z-10 flex w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed px-6 py-9 text-center transition-colors sm:py-10 ${
+        className={`relative z-10 flex w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed px-4 py-5 text-center transition-colors ${
           dragging
             ? "border-[#8b5cf6] bg-[#8b5cf6]/15"
             : "border-white/30 bg-black/10 hover:border-white/50 hover:bg-black/20"
         }`}
       >
         <svg
-          width="36"
-          height="36"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -124,10 +124,10 @@ export default function DropZone({ onFile, compact = false }) {
           <path d="M5 21h14a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2" />
         </svg>
         <div>
-          <p className="font-display text-lg font-semibold text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
+          <p className="font-display text-sm font-semibold text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
             Drop an image here
           </p>
-          <p className="mt-1 text-sm text-white/70 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
+          <p className="mt-0.5 text-[11px] text-white/70 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
             or click to browse &middot; JPG, PNG, WebP &middot; up to 20 MB
           </p>
         </div>
